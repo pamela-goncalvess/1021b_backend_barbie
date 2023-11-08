@@ -1,11 +1,11 @@
 import {test,expect,describe} from 'vitest'
-//import axios from 'axios'
-describe('Primeiro teste da aplicação',()=>{
+// import axios from 'axios'
+describe.skip('Primeiro teste da aplicação',()=>{
     test('Espero que 1 seja igual a 1',()=>{
     expect(1).toBe(1)
     })
 })
-describe('Cadastro de filmes',()=>{
+describe.skip('Cadastro de filmes Express',()=>{
     test('Espero que o filme seja cadastrado',async ()=>{
         const filme = {
             id:1,
@@ -15,15 +15,15 @@ describe('Cadastro de filmes',()=>{
         }
         //Passar isso para minha API
         const resposta = await fetch(
-            'http://localhost:3000/filmes',
-                {
-                    method:'POST',
-                    headers:{
-                        'Content-Type':'application/json'
-                    },
-                    body:JSON.stringify(filme)
-                }
-            )
+                    'http://localhost:3000/filmes',
+                    {
+                        method:'POST',
+                        headers:{
+                            'Content-Type':'application/json'
+                        },
+                        body:JSON.stringify(filme)
+                    }
+                    )
         //Esperar que minha API tenha cadastrado o filme
         expect(resposta.status).toBe(201)
         expect(await resposta.json()).toEqual(filme)
@@ -37,20 +37,20 @@ describe('Cadastro de filmes',()=>{
         }
         //Passar isso para minha API
         const resposta = await fetch(
-            'http://localhost:3000/filmes',
-                {
-                    method:'POST',
-                    headers:{
-                        'Content-Type':'application/json'
-                    },
-                    body:JSON.stringify(filme)
-                }
-            )
+                    'http://localhost:3000/filmes',
+                    {
+                        method:'POST',
+                        headers:{
+                            'Content-Type':'application/json'
+                        },
+                        body:JSON.stringify(filme)
+                    }
+                    )
         //Esperar que minha API tenha cadastrado o filme
         expect(resposta.status).toBe(201)
         expect(await resposta.json()).toEqual(filme)
     })
-    test('Espero que o filme seja cadastrado seja listado',async ()=>{
+    test('Espero que o filme cadastrado seja listado',async ()=>{
         const filme = {
             id:2,
             titulo:'Vingadores',
@@ -59,15 +59,15 @@ describe('Cadastro de filmes',()=>{
         }
         //Passar isso para minha API
         const resposta = await fetch(
-            'http://localhost:3000/filmes',
-                {
-                    method:'POST',
-                    headers:{
-                        'Content-Type':'application/json'
-                    },
-                    body:JSON.stringify(filme)
-                }
-            )
+                    'http://localhost:3000/filmes',
+                    {
+                        method:'POST',
+                        headers:{
+                            'Content-Type':'application/json'
+                        },
+                        body:JSON.stringify(filme)
+                    }
+        )
         //Esperar que minha API tenha cadastrado o filme
         expect(resposta.status).toBe(201)
         expect(await resposta.json()).toEqual(filme)

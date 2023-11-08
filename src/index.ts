@@ -3,7 +3,7 @@ const app = express()
 app.use(express.json())
 //Tenho que ter uma rota post para cadastrar um filme
 
-//Salvar em algum lugar o filme que foi cadastrado
+//Salvar em algum lugar o filme que foi cadastrado.
 type Filme = {
     id:number,
     titulo:string,
@@ -19,7 +19,7 @@ app.post('/filmes',(req,res)=>{
         descricao,
         imagem
     }
-    //Como eu salvo o filme que foi cadastrado no meu vetor de filmes
+    //Como eu salvo o filme que foi cadastrado no meu vetor de filmes (Banco de dados)
     filmesCadastros.push(filme)
     res.status(201).send(filme)
 })
@@ -29,9 +29,9 @@ app.get('/filmes',(req,res)=>{
 
 app.get('/filmes/:id',(req,res)=>{
     const id = parseInt(req.params.id)
-    //FIND para buscar um filme pelo id e retornar para o usuario
-    const filme = filmesCadastros.find(filme=>filme.id === id)
-    if(!filme) return res.status(404).send('Filme não encontrado')
+    //FIND para buscar um filme pelo id e retornar para o usuário
+    const filme = filmesCadastros.find(filme => filme.id === id)
+    if(!filme) return res.status(404).send("Filme não encontrado")
     res.status(200).send(filme)
 })
 
