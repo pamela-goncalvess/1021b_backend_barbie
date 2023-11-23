@@ -23,8 +23,8 @@ describe('BancoEmMemoria', () => {
         //Entrada
         const filme = {
             id:1,
-            titulo:'Filme 1',
-            descricao:'Descrição do filme 1',
+            titulo:'Pequena Sereia',
+            descricao:'Descrição do filme Pequena Sereia',
             imagem:'imagem.jpg'
         }
         //processamento
