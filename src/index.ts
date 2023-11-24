@@ -29,7 +29,7 @@ app.post('/filmes', async(req,res)=>{
     const filmes = await salvaFilme.execute(filme)
     /*filmesCadastros.push(filme)*/
     res.status(201).send(filme)
-}catch(error){
+}   catch(error){
     res.status(404).send("Filme já adicionado.");
 }
 })
